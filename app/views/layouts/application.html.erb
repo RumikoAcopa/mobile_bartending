@@ -10,8 +10,25 @@
   </head>
 
   <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <nav>
+  <% if user_signed_in? %>
+  <%= link_to "Drinks", drinks_path  %>
+  <%= link_to "New Drink", new_drink_path  %>
+  <%= link_to "Orders", orders_path  %>
+  <%= link_to "New Order", new_order_path  %>
+  <%= form_tag(destroy_user_session_path, method: :delete, style: "display: inline-block") do %>
+   <%=submit_tag "Sign out" %>
+  <% end %>
+  <% else %>
+  <%= link_to "Sign Up", new_user_registration_path %>
+  <%= link_to "Sign In", new_user_session_path %>
+
+  <% end %>
+  </nav>
+
+  <% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, class: name %>
+  <% end %>
     <%= yield %>
   </body>
 </html>

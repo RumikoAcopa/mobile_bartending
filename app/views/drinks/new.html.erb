@@ -1,0 +1,14 @@
+<%= render partial: 'form', locals: {drink: @drink}%>
+<%= form_for @drink do |f| %>
+
+<p><%= f.label :name %></p>
+<p><%= f.text_field :name %></p>
+<p><%= f.label :ingredients %></p>
+<p><%= f.text_field :ingredients %></p>
+<p><%= f.label :price %></p>
+<p><%= f.text_field :price %></p>
+<p><%= f.label :quantity %></p>
+<p><%= f.text_field :quantity %></p>
+
+<%= f.submit %>
+<% end %>
