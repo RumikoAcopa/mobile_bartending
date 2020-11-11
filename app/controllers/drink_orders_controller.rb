@@ -15,7 +15,7 @@ def show
 end
 
 def edit
-set_order
+  set_order
 end
 
 def create
