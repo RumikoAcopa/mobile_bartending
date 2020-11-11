@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :drink_orders
-  resources :drinks
+  resources :drinks 
   devise_for :users do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
