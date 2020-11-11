@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2020_11_09_004418) do
     t.integer "price"
     t.integer "quantity"
     t.integer "user_id"
-    t.integer "order_id"
+    t.integer "order_id" #take out order_id
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["order_id"], name: "index_drinks_on_order_id"

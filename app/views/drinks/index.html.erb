@@ -1,3 +1,8 @@
-<% @drinks.each do |drink|%>
-<li><%= drink.name %></li>
+<h1> My Drinks </h1>
+<% Drink.all.each do |drink|%>
+    <li><%= drink.name %> -
+        <%= drink.ingredients %>
+        <%= drink.price %>
+        <%= drink.quantity %>
+    </li>
 <% end %>

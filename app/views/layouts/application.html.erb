@@ -16,6 +16,7 @@
   <%= link_to "New Drink", new_drink_path  %>
   <%= link_to "Orders", orders_path  %>
   <%= link_to "New Order", new_order_path  %>
+
   <%= form_tag(destroy_user_session_path, method: :delete, style: "display: inline-block") do %>
    <%=submit_tag "Sign out" %>
   <% end %>

@@ -1,6 +1,5 @@
 class DrinksController < ApplicationController
     before_action :set_drink, only: [:show, :edit, :update, :destroy]
-    #is be able to look for it before you can see it, edit, update or destroy
     before_action :authenticate_user!
 
     def index
@@ -8,15 +7,15 @@ class DrinksController < ApplicationController
     end
 
     def new
-       @drink = Drink.new
+      @drink = Drink.new
     end
 
     def show
-      @drinks = current_user.drinks.find(params[:id])
+      #@drinks = current_user.drinks.find(params[:id])
     end
 
     def edit
-    set_drink
+      #set_drink
     end
 
     def create
