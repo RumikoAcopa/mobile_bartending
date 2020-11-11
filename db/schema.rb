@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_08_213405) do
+ActiveRecord::Schema.define(version: 2020_11_11_020606) do
+
+  create_table "drink_orders", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "drink_id", null: false
+    t.string "special_instructions"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["drink_id"], name: "index_drink_orders_on_drink_id"
+    t.index ["user_id"], name: "index_drink_orders_on_user_id"
+  end
 
   create_table "drinks", force: :cascade do |t|
     t.string "name"
@@ -32,4 +42,6 @@ ActiveRecord::Schema.define(version: 2020_11_08_213405) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "drink_orders", "drinks"
+  add_foreign_key "drink_orders", "users"
 end
