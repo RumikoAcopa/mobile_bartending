@@ -47,6 +47,6 @@ def set_order
 end 
 
 def drink_order_params
-    params.require(:order).permit(:user_id, :drink_id, :special_instructions)
+    params.require(:order).permit(:user_id, :drink_id, :special_instructions, :quantity)
 end 
 end
