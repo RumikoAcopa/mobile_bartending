@@ -3,7 +3,7 @@ class DrinksController < ApplicationController
     before_action :authenticate_user!
 
     def index
-        @drinks = current_user.drinks   
+      @drinks = current_user.drinks   
     end
 
     def new
@@ -11,11 +11,11 @@ class DrinksController < ApplicationController
     end
 
     def show
-      #@drinks = current_user.drinks.find(params[:id])
+      @drinks = current_user.drinks.find(params[:id])
     end
 
     def edit
-      #set_drink
+      set_drink
     end
 
     def create
