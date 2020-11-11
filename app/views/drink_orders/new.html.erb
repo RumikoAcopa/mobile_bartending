@@ -1,7 +1,16 @@
 <%= form_for @order do |f| %>
 
+<p><%= f.label :user_id, "Name" %></p>
+<p><%= f.text_field :user_id %></p>
+
+<p><%= f.label :drink_id %></p>
+<p><%= f.text_field :drink_id %></p>
+
+<p><%= f.label :special_instructions %></p>
+<p><%= f.text_field :special_instructions %></p>
+
 <p><%= f.label :quantity %></p>
-<p><%= f.integer :quantity %></p>
+<p><%= f.number_field :quantity %></p>
 
 <%= f.submit %>
 <% end %>
