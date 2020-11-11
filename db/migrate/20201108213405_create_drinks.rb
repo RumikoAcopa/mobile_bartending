@@ -6,8 +6,7 @@ class CreateDrinks < ActiveRecord::Migration[6.0]
       t.integer :price
       t.integer :quantity
       t.references :user
-      t.references :order
-
+      
       t.timestamps
     end
   end

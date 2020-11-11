@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :drinks
-  #has_many :ordered_drinks, through: :orders, source: :drink
+  has_many :orders
+  #has_many :drinks, through: :orders
   devise :database_authenticatable, :registerable, :validatable
 end

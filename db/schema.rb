@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_09_004418) do
+ActiveRecord::Schema.define(version: 2020_11_08_213405) do
 
   create_table "drinks", force: :cascade do |t|
     t.string "name"
@@ -18,28 +18,18 @@ ActiveRecord::Schema.define(version: 2020_11_09_004418) do
     t.integer "price"
     t.integer "quantity"
     t.integer "user_id"
-    t.integer "order_id" #take out order_id
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["order_id"], name: "index_drinks_on_order_id"
     t.index ["user_id"], name: "index_drinks_on_user_id"
-  end
-
-  create_table "orders", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "quantity"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.date "date_of_birth"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
-  add_foreign_key "orders", "users"
 end
