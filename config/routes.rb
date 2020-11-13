@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
   resources :drink_orders
-  resources :drinks 
-  devise_for :users do
-    get '/users/sign_out' => 'devise/sessions#destroy'
+  resources :drinks do 
+    resources :drink_orders, only: [:index, :new]
+  end 
+  
+  devise_for :users, controllers: {omniauth_callbacks: 'users/omniauth_callbacks'} 
     
-  end
+  
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  root to: "users#show"
+  root to: "drinks#index"
 end
