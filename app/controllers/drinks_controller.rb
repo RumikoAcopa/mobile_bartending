@@ -1,7 +1,7 @@
 class DrinksController < ApplicationController
-  before_action :authenticate_user!   
-  before_action :set_drink, only: [:show, :edit, :update, :destroy]
-    
+    before_action :set_drink, only: [:show, :edit, :update, :destroy]
+    before_action :authenticate_user! 
+
     def index
       @drinks = current_user.drinks   
     end
@@ -11,11 +11,11 @@ class DrinksController < ApplicationController
     end
 
     def show
-      @drinks = current_user.drinks.find(params[:id])
+      @drinks = Drink.find(params[:id])
     end
 
     def edit
-      set_drink
+      
     end
 
     def create
@@ -43,7 +43,7 @@ class DrinksController < ApplicationController
     private
 
     def set_drink
-        @drink = current_user.drinks.find(params[:id])
+        @drink = Drink.find(params[:id])
     end 
 
     def drink_params
