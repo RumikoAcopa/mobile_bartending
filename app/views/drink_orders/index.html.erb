@@ -1,3 +1,6 @@
+<h1> Orders </h1>
 <% @orders.each do |order|%>
 <li><%= order.quantity %></li>
 <% end %>
+<%= link_to "Edit Order", drink_orders_path(@order) %>|
+
