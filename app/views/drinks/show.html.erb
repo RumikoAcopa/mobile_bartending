@@ -1,2 +1,20 @@
-<h1><%= @drink.name %></h1>
-<%= link_to "Edit Drink", edit_drink_order_path(@drink) %>
+<p>
+  <strong>Name:</strong>
+  <%= @drink.name %>
+</p>
+<p>
+  <strong>Ingredients:</strong>
+  <%= @drink.ingredients %>
+</p>
+<p>
+  <strong>Price:</strong>
+  <%= @drink.price %>
+</p><br>
+
+<%= link_to "Back", drinks_path %>|
+<%= link_to "Edit Drink", edit_drink_path(@drink) %>|
+<%= link_to "Order Drink", new_drink_drink_order_path(@drink) %>|
+
+<%= form_tag(drink_path(@drink), method: :delete) do %>
+<%= submit_tag "Delete Drink" %>
+<% end %>

@@ -1,7 +1,10 @@
-<h1> My Drinks </h1>
+<h1> Drinks </h1>
+
 <% Drink.all.each do |drink|%>
-    <li><%= drink.name %> -
-        <%= drink.ingredients %>
-        <%= drink.price %>
-    </li>
+    
+  <strong>Drink:</strong>
+  <%= link_to drink.name, drink_path(drink) %><br>
+  <br>
+    
 <% end %>
+    
