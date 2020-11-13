@@ -9,6 +9,11 @@
   </div>
 
   <div class="field">
+    <%= f.label :date_of_birth %><br />
+    <%= f.date_field :date_of_birth %>
+  </div>
+
+  <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
@@ -25,5 +30,5 @@
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
-
+<br>
 <%= render "devise/shared/links" %>
