@@ -12,9 +12,5 @@
 </p><br>
 
 <%= link_to "Back", drinks_path %>|
-<%= link_to "Edit Drink", edit_drink_path(@drink) %>|
-<%= link_to "Order Drink", new_drink_drink_order_path(@drink) %>|
 
-<%= form_tag(drink_path(@drink), method: :delete) do %>
-<%= submit_tag "Delete Drink" %>
-<% end %>
+<%= link_to "Order Drink", new_drink_drink_order_path(@drink) %>|

@@ -1,54 +1,61 @@
 class DrinksController < ApplicationController
-    before_action :set_drink, only: [:show, :edit, :update, :destroy]
-    before_action :authenticate_user! 
+  before_action :set_drink, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user! 
 
-    def index
-      @drinks = current_user.drinks   
+  def index
+    @drinks = Drink.all  
+  end
+
+  def current_user_drinks_order
+    @orders = current_user.drink_orders
+  end
+
+  def current_user_drinks 
+    @drinks = current_user.drinks
+  end 
+
+  def new
+    @drink = Drink.new
+  end
+
+  def show
+    @drinks = Drink.find(params[:id])
+  end
+
+  def edit
+    
+  end
+
+  def create
+    @drink = current_user.drinks.build(drink_params)
+    if @drink.save
+      redirect_to drink_path(@drink)
+    else
+      render :new
     end
+  end
 
-    def new
-      @drink = Drink.new
+  def update
+    if @drink.update(drink_params)
+      redirect_to drink_path(@drink)
+    else
+      render :edit 
     end
+  end
 
-    def show
-      @drinks = Drink.find(params[:id])
-    end
+  def destroy
+   @drink.destroy
+   redirect_to drinks_path
+  end
 
-    def edit
-      
-    end
+  private
+  def set_drink
+    @drink = Drink.find(params[:id])
+  end 
 
-    def create
-      @drink = current_user.drinks.build(drink_params)
-      if @drink.save
-        redirect_to drink_path(@drink)
-      else
-        render :new
-      end
-    end
-
-    def update
-       if @drink.update(drink_params)
-         redirect_to drink_path(@drink)
-       else
-         render :edit 
-       end
-    end
-
-    def destroy
-     @drink.destroy
-     redirect_to drinks_path
-    end
-
-    private
-
-    def set_drink
-        @drink = Drink.find(params[:id])
-    end 
-
-    def drink_params
-        params.require(:drink).permit(:name, :ingredients, :price)
-    end 
+  def drink_params
+    params.require(:drink).permit(:name, :ingredients, :price)
+  end 
 end
 
 

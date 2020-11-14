@@ -4,7 +4,7 @@ class DrinkOrdersController < ApplicationController
   #before_action :set_drink
 
   def index
-    @orders = DrinkOrder.all #not sure why i can't use current_user.orders here  
+    @orders = DrinkOrder.all  
   end
 
   def new
