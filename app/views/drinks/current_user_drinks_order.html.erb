@@ -1,8 +1,9 @@
 <h3> My Orders</h3>
 <% @orders.each do |order|%>
-<li><%= order.drink.name %>
-<%= order.quantity %>
+<li><%= link_to order.drink.name, drink_order_path(order) %> , Qty:
+<%= order.quantity %>, Special Instructions:
 <%= order.special_instructions %>
-<% end %></li>
-<%= link_to "Back", new_drink_order_path %>|
-<%= link_to "Drink Menu", drinks_path %>|
+<% end %></li><br>
+
+<%= link_to "Back ", new_drink_order_path %>|
+<%= link_to "Drink Menu ", drinks_path %>|
