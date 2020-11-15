@@ -1,10 +1,12 @@
-<h1> My Orders </h1>
-<% @orders.each do |order|%>
+<h1> <%= @drink.name %> Orders </h1>
+
+<ol><% @orders.each do |order|%>
 <li><%= order.drink.name %>
 <%= order.quantity %>
-<%= order.special_instructions %>
-<% end %></li>
-<%= link_to "Back", new_drink_order_path %>|
+<%= order.special_instructions %></li>
+<% end %></ol>
+<%= link_to "Create Order", new_drink_drink_order_path(@drink) %>|
 <%= link_to "Drink Menu", drinks_path %>|
+
 
 
