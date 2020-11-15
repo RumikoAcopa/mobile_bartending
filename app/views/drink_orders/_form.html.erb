@@ -1,14 +1,13 @@
 <%= show_errors_for(@order)%>
-<%= form_for @order do |f| %>
+<%= form_for ([@drink, @order]) do |f| %>
 
-<%= collection_select(:drink_order, :drink_id, Drink.all, :id, :name, prompt: true)
+<%= collection_select(:drink_order, :drink_id, Drink.all, :id, :name, prompt: true, selected: @id)
  %>
 <%= f.label :special_instructions, "Instructions" %>
 <%= f.text_field :special_instructions %>
 
 <%= f.label :quantity, "Quantity" %>
 <%= f.text_field :quantity %>
-
 <%= f.submit %>
 <%= link_to "Back", drinks_path %>|
 
