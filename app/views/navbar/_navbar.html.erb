@@ -2,9 +2,7 @@
     <% if user_signed_in? %>
     <%= link_to "Drinks", drinks_path  %> |
     <%= link_to "My Drinks", current_user_drinks_drinks_path %> |
-    <%= link_to "My Orders", current_user_drinks_order_drinks_path %> |
-    <%= link_to "New Drink", new_drink_path  %> |
-    <%= link_to "New Order", new_drink_order_path  %> |
+    <%= link_to "My Orders", current_user_drinks_order_drinks_path %> |    
 
     <%= form_tag(destroy_user_session_path, method: :delete, style: "display: inline-block") do %>
 
