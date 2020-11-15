@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  resources :drink_orders
+  resources :drink_orders do
+    resources :drinks
+    
+  end
   resources :drinks do 
-    resources :drink_orders, only: [:index, :new]
+    resources :drink_orders
     get :current_user_drinks_order, on: :collection
     get :current_user_drinks, on: :collection
   end 
