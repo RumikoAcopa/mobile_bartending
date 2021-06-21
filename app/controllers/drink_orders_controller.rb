@@ -6,8 +6,7 @@ class DrinkOrdersController < ApplicationController
 
   def index
     @orders = @drink.drink_orders
-    #if there is a drink, make orders for that drink else make it all
-    #this users orders.
+  
   end
 
   def new
