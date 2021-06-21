@@ -35,7 +35,7 @@ source 'http://rubygems.org'
 
 To use Mobile Bartender. 
 Sign Up for an Account with 'Mobile Bartender App'. 
-Once logged in browse the Drink Menu.  Select a Drink, See how many orders a specific drink has, see your the Drinks in general that you have ordered, see the drink orders you have created. Edit & Delete the Drink Order as you wish.  Stretch Goals for this application would be to add a cart, style/css, delivery option, delivery time/date. 
+Once logged in browse the Drink Menu.  Select a drink, See how many orders a specific drink has, see your the Drinks in general that you have ordered, see the drink orders you have created. Edit & Delete the Drink Order as you wish.  Stretch Goals for this application would be to add a cart, style/css, delivery option, delivery time/date. 
 
 #YourCodingEsty
 
