@@ -11,7 +11,6 @@ class User < ApplicationRecord
     end
   end
 
-  #for omniauth
   #validates oauth
   def self.from_google(uid:, email:, full_name:, avatar_url:)
   user = User.find_or_create_by(email: email) do |u|
