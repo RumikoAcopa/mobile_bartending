@@ -7,7 +7,4 @@ class Drink < ApplicationRecord
         order(:name => "ASC")
     end
 
-    #def self.show_order_desc
-    #    self.drinks.where(drink_id: @drink.id).order("created_at AESC")
-    #end
 end
