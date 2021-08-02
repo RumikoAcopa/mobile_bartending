@@ -37,7 +37,7 @@ To use Mobile Bartender.
 Sign Up for an Account with 'Mobile Bartender App'. 
 Once logged in browse the Drink Menu.  Select a drink, See how many orders a specific drink has, see your the Drinks in general that you have ordered, see the drink orders you have created. Edit & Delete the Drink Order as you wish.  Stretch Goals for this application would be to add a cart, style/css, delivery option, delivery time/date. 
 
-#YourCodingEsty
+#CodingEsty
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
